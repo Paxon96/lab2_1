@@ -9,10 +9,15 @@ public class BinarySearchTest {
 
     @Test
     public void elementInSequenceTest() {
-
         int[] sequence = {ELEMENT};
 
         Assert.assertTrue(BinarySearch.search(ELEMENT, sequence).isFound());
     }
 
+    @Test
+    public void elementNotInSingleSequenceTest(){
+        int[] sequence = {ELEMENT+1};
+
+        Assert.assertFalse(BinarySearch.search(ELEMENT, sequence).isFound());
+    }
 }
