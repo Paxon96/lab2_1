@@ -34,4 +34,11 @@ public class BinarySearchTest {
 
         Assert.assertEquals(sequence.length, BinarySearch.search(ELEMENT, sequence).getPosition());
     }
+
+    @Test
+    public void elementMiddleInSequenceTest() {
+        int[] sequence = {ELEMENT - 2, ELEMENT - 1, ELEMENT, ELEMENT + 1, ELEMENT + 2};
+
+        Assert.assertEquals((sequence.length/2) +1, BinarySearch.search(ELEMENT, sequence).getPosition());
+    }
 }
