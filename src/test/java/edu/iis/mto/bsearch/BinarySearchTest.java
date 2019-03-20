@@ -15,16 +15,23 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementNotInSingleSequenceTest(){
-        int[] sequence = {ELEMENT+1};
+    public void elementNotInSingleSequenceTest() {
+        int[] sequence = {ELEMENT + 1};
 
         Assert.assertFalse(BinarySearch.search(ELEMENT, sequence).isFound());
     }
 
     @Test
-    public void elementFirstInSequenceTest(){
-        int[] sequence = {ELEMENT, ELEMENT+1,ELEMENT+2,ELEMENT+3};
+    public void elementFirstInSequenceTest() {
+        int[] sequence = {ELEMENT, ELEMENT + 1, ELEMENT + 2, ELEMENT + 3};
 
-        Assert.assertEquals(1,BinarySearch.search(ELEMENT,sequence).getPosition());
+        Assert.assertEquals(1, BinarySearch.search(ELEMENT, sequence).getPosition());
+    }
+
+    @Test
+    public void elementLastInSequenceTest() {
+        int[] sequence = {ELEMENT - 3, ELEMENT - 2, ELEMENT - 1, ELEMENT};
+
+        Assert.assertEquals(sequence.length, BinarySearch.search(ELEMENT, sequence).getPosition());
     }
 }
