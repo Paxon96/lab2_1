@@ -52,4 +52,12 @@ public class BinarySearchTest {
         Assert.assertFalse(BinarySearch.search(ELEMENT, sequence).isFound());
         Assert.assertEquals(-1, BinarySearch.search(ELEMENT, sequence).getPosition());
     }
+
+    @Test
+    public void searchElementInEmptySequenceTest(){
+        int[] sequence = {};
+
+        Assert.assertFalse(BinarySearch.search(ELEMENT, sequence).isFound());
+        Assert.assertEquals(-1, BinarySearch.search(ELEMENT,sequence).getPosition());
+    }
 }
