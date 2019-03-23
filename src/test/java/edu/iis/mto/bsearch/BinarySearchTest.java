@@ -27,7 +27,6 @@ public class BinarySearchTest {
     public void elementFirstInSequenceTest() {
         int[] sequence = {ELEMENT, ELEMENT + 1, ELEMENT + 2, ELEMENT + 3};
 
-        Assert.assertTrue(BinarySearch.search(ELEMENT, sequence).isFound());
         Assert.assertEquals(ELEMENT, sequence[BinarySearch.search(ELEMENT, sequence).getPosition()]);
     }
 
@@ -35,21 +34,20 @@ public class BinarySearchTest {
     public void elementLastInSequenceTest() {
         int[] sequence = {ELEMENT - 3, ELEMENT - 2, ELEMENT - 1, ELEMENT};
 
-       Assert.assertTrue(BinarySearch.search(ELEMENT, sequence).isFound());
        Assert.assertEquals(ELEMENT, sequence[BinarySearch.search(ELEMENT, sequence).getPosition()]);
     }
 
     @Test
     public void elementMiddleInSequenceTest() {
         int[] sequence = {ELEMENT - 2, ELEMENT - 1, ELEMENT, ELEMENT + 1, ELEMENT + 2};
-        Assert.assertTrue(BinarySearch.search(ELEMENT, sequence).isFound());
+
         Assert.assertEquals(ELEMENT, sequence[BinarySearch.search(ELEMENT, sequence).getPosition()]);
     }
 
     @Test
     public void elementNotInMultiSequenceTest() {
         int[] sequence = {ELEMENT + 1, ELEMENT + 2, ELEMENT + 3};
-        Assert.assertFalse(BinarySearch.search(ELEMENT, sequence).isFound());
+
         Assert.assertEquals(-1, BinarySearch.search(ELEMENT, sequence).getPosition());
     }
 
@@ -57,7 +55,7 @@ public class BinarySearchTest {
     public void searchElementInEmptySequenceTest(){
         int[] sequence = {};
 
-        Assert.assertFalse(BinarySearch.search(ELEMENT, sequence).isFound());
+
         Assert.assertEquals(-1, BinarySearch.search(ELEMENT,sequence).getPosition());
     }
 
@@ -65,7 +63,7 @@ public class BinarySearchTest {
     public void searchNegativeElementInSequenceTest(){
         int[] sequence = {ELEMENT - 4, ELEMENT - 3, ELEMENT - 2, ELEMENT - 1, ELEMENT, ELEMENT + 1, ELEMENT + 2};
         int key = ELEMENT - 4;
-        Assert.assertTrue(BinarySearch.search(key, sequence).isFound());
+
         Assert.assertEquals(key, sequence[BinarySearch.search(key, sequence).getPosition()]);
     }
 }
