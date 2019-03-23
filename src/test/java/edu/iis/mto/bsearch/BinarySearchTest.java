@@ -51,12 +51,11 @@ public class BinarySearchTest {
         Assert.assertEquals(-1, BinarySearch.search(ELEMENT, sequence).getPosition());
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void searchElementInEmptySequenceTest(){
         int[] sequence = {};
 
-
-        Assert.assertEquals(-1, BinarySearch.search(ELEMENT,sequence).getPosition());
+        BinarySearch.search(ELEMENT,sequence);
     }
 
     @Test
